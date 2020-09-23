@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String command = scanner.nextLine().trim();
+        String command = scanner.nextLine().trim().toLowerCase();
         String input = scanner.nextLine();
         int key = scanner.nextInt();
         StringBuilder result = new StringBuilder();
