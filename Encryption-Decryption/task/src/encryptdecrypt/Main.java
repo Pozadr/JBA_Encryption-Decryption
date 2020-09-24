@@ -1,18 +1,37 @@
 package encryptdecrypt;
 
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String command = scanner.nextLine().trim().toLowerCase();
-        String input = scanner.nextLine();
-        int key = scanner.nextInt();
+
+        String mode = "enc";
+        int key = 0;
+        String data = "";
+
+        for (int i = 0; i < args.length; i = i + 2) {
+            switch (args[i]) {
+                case "-mode": {
+                    mode = args[i + 1];
+                    break;
+                }
+                case "-key": {
+                    key = Integer.parseInt(args[i + 1]);
+                    break;
+                }
+                case "-data": {
+                    data = args[i + 1];
+                    break;
+                }
+                default: {
+                    break;
+                }
+            }
+        }
+
         StringBuilder result = new StringBuilder();
 
-        switch (command){
+        switch (mode){
             case "enc": {
-                for (char ch : input.toCharArray()) {
+                for (char ch : data.toCharArray()) {
                     int val = ch;
                     val = val + key;
                     result.append((char) val);
@@ -20,7 +39,7 @@ public class Main {
                 break;
             }
             case "dec": {
-                for (char ch : input.toCharArray()) {
+                for (char ch : data.toCharArray()) {
                     int val = ch;
                     val = val - key;
                     result.append((char) val);
