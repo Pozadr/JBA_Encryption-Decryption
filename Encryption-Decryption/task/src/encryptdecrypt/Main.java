@@ -1,6 +1,5 @@
 package encryptdecrypt;
 
-import java.io.File;
 import java.io.IOException;
 
 public class Main {
@@ -12,6 +11,7 @@ public class Main {
         String data = "";
         String inPath = "empty";
         String outPath = "empty";
+        String alg = "shift";
 
         // check input from console String[] args
         for (int i = 0; i < args.length; i = i + 2) {
@@ -36,12 +36,16 @@ public class Main {
                     outPath = args[i + 1];
                     break;
                 }
+                case "-alg": {
+                    alg = args[i + 1];
+                }
                 default: {
                     break;
                 }
             }
         }
 
+        // check the input path and read the file to one String
         if (!"empty".equals(inPath)) {
             try {
                 data = (FileData.readFileAsString(inPath));
@@ -50,22 +54,32 @@ public class Main {
             }
         }
 
+        // creating cipher object depends on user input
+        Cipher cipher;
+        if ("unicode".equals(alg)) {
+            cipher = new Unicode(data, key);
+        } else {
+            cipher = new Shift(data, key);
+        }
+
+
         switch (mode){
-            case "enc": {
+            case "enc":
+            {
                 if ("empty".equals(outPath)) {
-                    System.out.println(Cipher.encode(data, key));
+                    System.out.println(cipher.encode());
                     break;
                 } else { // outPath not empty
-                    FileData.writeStringToFile(outPath, Cipher.encode(data, key));
+                    FileData.writeStringToFile(outPath, cipher.encode());
                 }
                 break;
             }
             case "dec": {
                 if ("empty".equals(outPath)) {
-                    System.out.println(Cipher.decode(data, key));
+                    System.out.println(cipher.decode());
                     break;
                 } else { // outPath not empty
-                    FileData.writeStringToFile(outPath, Cipher.decode(data, key));
+                    FileData.writeStringToFile(outPath, cipher.decode());
                 }
                 break;
 

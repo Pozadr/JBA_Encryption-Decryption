@@ -1,28 +1,15 @@
 package encryptdecrypt;
 
-public class Cipher {
-
-    static public String encode (String data, int key){
-        StringBuilder result = new StringBuilder();
-
-        for (char ch : data.toCharArray()) {
-            int val = ch;
-            val = val + key;
-            result.append((char) val);
-        }
-        return result.toString();
+abstract class Cipher {
+    protected String data;
+    protected int key;
+    public Cipher (String data, int key) {
+        this.data = data;
+        this.key = key;
     }
+    public abstract String encode();
+    public abstract String decode();
+    public abstract String getAlgorithmName();
 
-
-    static public String decode (String data, int key) {
-        StringBuilder result = new StringBuilder();
-
-        for (char ch : data.toCharArray()) {
-            int val = ch;
-            val = val - key;
-            result.append((char) val);
-        }
-        return result.toString();
-    }
 
 }
