@@ -56,13 +56,7 @@ public class Main {
 
         // creating cipher object depends on user input
         CipherData cipher = new CipherData();
-        if ("unicode".equals(alg)) {
-            cipher.setMethod(new UnicodeCipherMethod());
-        } else {
-            cipher.setMethod(new ShiftCipherMethod());
-
-        }
-
+        cipher.setMethod(CipherFactory.newInstance(alg));
 
         switch (mode){
             case "enc":

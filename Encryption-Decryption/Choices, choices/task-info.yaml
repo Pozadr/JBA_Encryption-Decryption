@@ -201,6 +201,9 @@ files:
 - name: src/encryptdecrypt/CipherData.java
   visible: true
   learner_created: true
+- name: src/encryptdecrypt/CipherFactory.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/46/stages/250/implement
 status: Unchecked
 record: -1
