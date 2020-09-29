@@ -7,7 +7,7 @@
     <content url="file://$MODULE_DIR$/../../../../Problems (7)/Print &quot;We are robots!&quot;/test" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="Print &quot;We are robots!&quot;.Encryption-Decryption1.Problems__7_-Print__We_are_robots!_.main" />
+    <orderEntry type="module" module-name="Encryption-Decryption1.Problems__7_-Print__We_are_robots!_.main" />
     <orderEntry type="library" name="Gradle: com.github.hyperskill:hs-test:release-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Gradle: org.assertj:assertj-swing-junit:3.8.0" level="project" />
     <orderEntry type="library" name="Gradle: com.github.stefanbirkner:system-rules:1.19.0" level="project" />

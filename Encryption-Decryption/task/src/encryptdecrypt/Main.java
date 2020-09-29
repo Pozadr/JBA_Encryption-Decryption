@@ -29,7 +29,7 @@ public class Main {
                     break;
                 }
                 case "-in": {
-                    inPath = args[i + 1];;
+                    inPath = args[i + 1];
                     break;
                 }
                 case "-out": {
@@ -55,11 +55,12 @@ public class Main {
         }
 
         // creating cipher object depends on user input
-        Cipher cipher;
+        CipherData cipher = new CipherData();
         if ("unicode".equals(alg)) {
-            cipher = new Unicode(data, key);
+            cipher.setMethod(new UnicodeCipherMethod());
         } else {
-            cipher = new Shift(data, key);
+            cipher.setMethod(new ShiftCipherMethod());
+
         }
 
 
@@ -67,19 +68,19 @@ public class Main {
             case "enc":
             {
                 if ("empty".equals(outPath)) {
-                    System.out.println(cipher.encode());
+                    System.out.println(cipher.encode(data, key));
                     break;
                 } else { // outPath not empty
-                    FileData.writeStringToFile(outPath, cipher.encode());
+                    FileData.writeStringToFile(outPath, cipher.encode(data, key));
                 }
                 break;
             }
             case "dec": {
                 if ("empty".equals(outPath)) {
-                    System.out.println(cipher.decode());
+                    System.out.println(cipher.decode(data, key));
                     break;
                 } else { // outPath not empty
-                    FileData.writeStringToFile(outPath, cipher.decode());
+                    FileData.writeStringToFile(outPath, cipher.decode(data, key));
                 }
                 break;
 

@@ -1,13 +1,9 @@
 package encryptdecrypt;
 
-public class Unicode extends Cipher {
-
-    public Unicode(String data, int key) {
-        super(data, key);
-    }
+public class UnicodeCipherMethod implements CipherMethod {
 
     @Override
-    public String encode (){
+    public String encode (String data, int key){
         StringBuilder result = new StringBuilder();
 
         for (char ch : data.toCharArray()) {
@@ -19,7 +15,7 @@ public class Unicode extends Cipher {
     }
 
     @Override
-    public String decode () {
+    public String decode (String data, int key) {
         StringBuilder result = new StringBuilder();
 
         for (char ch : data.toCharArray()) {

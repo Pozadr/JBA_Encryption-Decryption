@@ -186,16 +186,19 @@ files:
 - name: output.txt
   visible: true
   learner_created: true
-- name: src/encryptdecrypt/Cipher.java
-  visible: true
-  learner_created: true
 - name: src/encryptdecrypt/FileData.java
   visible: true
   learner_created: true
-- name: src/encryptdecrypt/Shift.java
+- name: src/encryptdecrypt/CipherMethod.java
   visible: true
   learner_created: true
-- name: src/encryptdecrypt/Unicode.java
+- name: src/encryptdecrypt/ShiftCipherMethod.java
+  visible: true
+  learner_created: true
+- name: src/encryptdecrypt/UnicodeCipherMethod.java
+  visible: true
+  learner_created: true
+- name: src/encryptdecrypt/CipherData.java
   visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/projects/46/stages/250/implement

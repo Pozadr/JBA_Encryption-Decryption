@@ -1,13 +1,9 @@
 package encryptdecrypt;
 
-public class Shift extends Cipher {
-
-    public Shift(String data, int key) {
-        super(data, key);
-    }
+public class ShiftCipherMethod implements CipherMethod {
 
     @Override
-    public String encode() {
+    public String encode(String data, int key) {
         StringBuilder result = new StringBuilder();
 
         for (char ch : data.toCharArray()) {
@@ -29,7 +25,7 @@ public class Shift extends Cipher {
     }
 
     @Override
-    public String decode() {
+    public String decode(String data, int key) {
         StringBuilder result = new StringBuilder();
 
         for (char ch : data.toCharArray()) {
