@@ -32,10 +32,12 @@ class TakePersonsWithStepAlgorithm implements PersonSelectionAlgorithm {
     public Person[] select(Person[] persons) {
         // write your code here
         if (step != 1) {
+            int resultCnt = 0;
             Person[] result = new Person[(persons.length - 1) / step + 1];
-            for (int i = 0, resultCnt = 0; i < persons.length; i++) {
+            for (int i = 0; i < persons.length; i++) {
                 if (i % step == 0) {
-                    result[resultCnt++] = persons[i];
+                    result[resultCnt] = persons[i];
+                    resultCnt++;
                 }
             }
             return result;

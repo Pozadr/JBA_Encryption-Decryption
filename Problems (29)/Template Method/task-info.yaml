@@ -20,5 +20,9 @@ files:
     \ meal\");\n        meal.doMeal();\n    }\n}"
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/5202
-status: Unchecked
+status: Solved
+feedback:
+  message: <html>Correct solution<br/><br/>Continue on <a href="https://hyperskill.org/learn/step/5202">JetBrains
+    Academy</a></html>
+  time: Wed, 30 Sep 2020 09:28:13 UTC
 record: -1

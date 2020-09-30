@@ -35,8 +35,8 @@ class Time {
 
     public static Time of(int hour, int minute, int second) {
         // write your code here
-        if (isInRange(hour,0,23) && isInRange(minute,0,59)
-                && isInRange(second,0,59)) {
+        if (isInRange(hour, 0, 23) && isInRange(minute, 0, 59)
+                && isInRange(second, 0, 59)) {
             Time of = new Time();
             of.hour = hour;
             of.minute = minute;

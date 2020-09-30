@@ -18,7 +18,7 @@ abstract class Robot {
 
 /** Robot types */
 enum RobotType {
-    ROBOT_CLEANER,
+    ROBOT_CLEANER, ROBOT_GUARDIAN;
     /**  write your code here ... */
 }
 
@@ -59,14 +59,47 @@ class RobotCleaner extends Robot {
 
 /** Concrete Product - Robot Guardian */
 class RobotGuardian extends Robot {
+    private String name;
+    private String description;
+    private int power;
+
     /**  write your code here ... */
+    public RobotGuardian(String name, String description, int power) {
+        this.name = name;
+        this.description = description;
+        this.power = power;
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
+    public String getDescription() {
+        return this.description;
+    }
+
+    @Override
+    public int getPower() {
+        return this.power;
+    }
+
+    @Override
+    public String toString() {
+        return "guardian-" + super.toString();
+    }
 }
 
 class RobotFactory {
 
     /** Factory method */
     public Robot getRobot(RobotType type, String name, String description, int power) {
-        /**  write your code here ... */
+        switch (type) {
+            case ROBOT_CLEANER: return new RobotCleaner(name, description, power);
+            case ROBOT_GUARDIAN: return new RobotGuardian(name, description, power);
+            default: return null;
+        }
     }
 }
 
