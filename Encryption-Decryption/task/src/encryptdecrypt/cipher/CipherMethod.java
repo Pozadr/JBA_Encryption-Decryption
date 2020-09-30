@@ -1,4 +1,4 @@
-package encryptdecrypt;
+package encryptdecrypt.cipher;
 
 interface CipherMethod {
     String encode(String data, int key);

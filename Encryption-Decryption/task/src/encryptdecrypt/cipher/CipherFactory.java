@@ -1,4 +1,4 @@
-package encryptdecrypt;
+package encryptdecrypt.cipher;
 
 public class CipherFactory {
 

@@ -1,4 +1,6 @@
-package encryptdecrypt;
+package encryptdecrypt.cipher;
+
+import encryptdecrypt.CipherMethod;
 
 public class UnicodeCipherMethod implements CipherMethod {
 

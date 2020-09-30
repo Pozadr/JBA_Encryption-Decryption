@@ -1,6 +1,8 @@
-package encryptdecrypt;
+package encryptdecrypt.cipher;
 
-public class CipherData {
+import encryptdecrypt.cipher.CipherMethod;
+
+public class CipherClient {
     private CipherMethod method;
 
     public void setMethod(CipherMethod method) {

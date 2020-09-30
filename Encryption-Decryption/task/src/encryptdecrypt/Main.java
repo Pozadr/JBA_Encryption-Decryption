@@ -1,5 +1,9 @@
 package encryptdecrypt;
 
+import encryptdecrypt.cipher.CipherClient;
+import encryptdecrypt.cipher.CipherFactory;
+import encryptdecrypt.data.FileData;
+
 import java.io.IOException;
 
 public class Main {
@@ -55,7 +59,7 @@ public class Main {
         }
 
         // creating cipher object depends on user input
-        CipherData cipher = new CipherData();
+        CipherClient cipher = new CipherClient();
         cipher.setMethod(CipherFactory.newInstance(alg));
 
         switch (mode){
