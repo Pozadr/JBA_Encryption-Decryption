@@ -1,6 +1,5 @@
 package encryptdecrypt.cipher;
 
-import encryptdecrypt.cipher.CipherMethod;
 
 public class CipherClient {
     private CipherMethod method;
